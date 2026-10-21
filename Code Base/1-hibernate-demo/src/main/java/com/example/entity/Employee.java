@@ -1,16 +1,24 @@
 package com.example.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
-@Entity
+@Entity //mandatory
+@Table(name="employees") //optional
 public class Employee {
-	@Id
+	@Id //mandatory
 private int empId;
+	@Column(name="ENAME",length = 20)
 private String empName;
+	@Column(unique = true, length = 25,nullable = false)//optional
+private String email;
 private float salary;
 private String address;
-
+@ManyToOne
+private Department dept;
 public int getEmpId() {
 	return empId;
 }
@@ -34,6 +42,18 @@ public String getAddress() {
 }
 public void setAddress(String address) {
 	this.address = address;
+}
+public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public Department getDept() {
+	return dept;
+}
+public void setDept(Department dept) {
+	this.dept = dept;
 }
 
 
