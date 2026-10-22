@@ -17,7 +17,7 @@ public static void main(String[] args) {
 	System.out.println("Hello, tables are created ");
 	//addNewEmployee();
 	//searchEmp(110);
-	//updateAddress(101, "Bangalore");
+//	updateAddress(1, "Bangalore");
 }
 static void updateAddress(int id, String address) {
 	Session session=sesFact.openSession();

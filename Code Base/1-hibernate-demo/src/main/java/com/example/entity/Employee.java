@@ -1,13 +1,19 @@
 package com.example.entity;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity //mandatory
 @Table(name="employees") //optional
+@DynamicUpdate//update only specific col
+@DynamicInsert //null cols are omitted
 public class Employee {
 	@Id //mandatory
 private int empId;
@@ -17,7 +23,7 @@ private String empName;
 private String email;
 private float salary;
 private String address;
-@ManyToOne
+@ManyToOne(fetch = FetchType.LAZY)
 private Department dept;
 public int getEmpId() {
 	return empId;
