@@ -3,7 +3,7 @@
 	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
 		   https://www.springframework.org/schema/beans/spring-beans.xsd">
-	<bean id="mybean" class="com.example.bean.GreetingBean" lazy-init="false" scope="prototype">
+	<bean id="mybean" class="com.example.bean.GreetingBean" lazy-init="false" scope="singleton">
 		<property name="msg" value="Hv a nice Day!!!!"></property>
 	</bean>	   
 </beans>
